@@ -9,12 +9,11 @@
 ## Equipo
 
 | Integrante | Rol en la inspección |
-|---|---|---|
+|-------------|----------------------|
 | AMAGUA SACON ROBYN WILLIAN | Moderador / Inspector 3 |
 | CRESPO ESPINOZA KLEBER OBED | Lector |
 | GAMARRA ARAUJO EDHU XAVIER | Inspector 1 |
 | PONCE RIVERA MERY HELENMEY | Inspector 2 |
-
 ---
 
 ## Estructura del repositorio
