@@ -145,5 +145,235 @@ una línea base con Git y comparar metodológicamente la IR tradicional frente a
 \item Comparar herramientas CASE de IR y contrastar IR tradicional frente a IR ágil con conclusiones críticas propias.
 \end{enumerate}
 
+%======================================================
+\section{Fundamento Teórico}
+%======================================================
+\subsection{Marco Normativo}
+La validación de requisitos se enmarca dentro del proceso \textit{Requirements Validation}
+definido en la cláusula 6.4 de \cite{iso29148}, que exige verificar que el conjunto de requisitos sea completo, consistente, verificable y trazable antes de la línea base. Dicha norma complementa
+al proceso \textit{SYS.2 System Requirements Definition} de \cite{iso15288}, que en su sección 6.4.4 establece la obligación de validar los requisitos del sistema con los stakeholders representativos
+antes de cualquier autorización de diseño.
+
+El control de cambios está regulado por el proceso \textit{Configuration Management} (cláusula 6.3.5) de \cite{iso12207}, que define las actividades de identificación de la configuración, control
+de cambios, registro de estado y auditoría. La constitución y operación de un \textit{Change
+Control Board} (CCB) como mecanismo formal de autorización de cambios se alinea con
+el principio de \textit{Governance} del \cite{pmbok7}, que ubica al CCB como instancia de toma de decisiones
+que equilibra los intereses de los stakeholders frente al impacto en alcance, cronograma y costo.
+
+El modelo de calidad de \cite{iso25010} es aplicable al ERS de CarniCore en tanto permite verificar que los requisitos de calidad del producto (fiabilidad, mantenibilidad, usabilidad, etc.) estén declarados
+de forma medible y verificable; un ERS deficiente en este aspecto produce requisitos no
+funcionales ambiguos que no pueden ser validados, como se evidenció en varios RNF del documento base (Sección~3).
+
+El SWEBOK v4.0, secciones 1.6--1.8 \cite{swebok2024}, organiza el conocimiento de ingeniería de
+requisitos en elicitación, análisis, especificación, validación y gestión, destacando que la
+validación no es una actividad puntual sino continua a lo largo del ciclo de vida. Pohl
+\cite{pohl2010}, Parte V, extiende este modelo con el concepto de \textit{quality assurance of requirements},
+integrando revisiones, inspecciones, pruebas de requisitos y métricas de calidad.
+
+\subsection{Validación de Requisitos}
+\paragraph{Distinción verificación / validación.}
+La verificación comprueba que el producto se construye correctamente (\textit{“Are we building the product right?”}), mientras que la validación comprueba que se construye el producto correcto (\textit{“Are we building the right product?”}) \cite{wiegers2013}. En el contexto del ERS de CarniCore, verificar
+significa comprobar que el documento cumple ISO/IEC/IEEE 29148:2018; validar significa confirmar con la propietaria, el administrador general, el encargado de bodega y el carnicero que los requisitos describen realmente sus necesidades operativas.
+
+\paragraph{Técnicas de validación.} \cite{pohl2010} clasifica las técnicas de validación en:
+\begin{itemize}[nosep]
+\item \textbf{Revisión:} revisión informal o \textit{walkthrough} sin roles formales.
+\item \textbf{Inspección Fagan:} técnica formal con roles, preparación individual y métricas \cite{fagan1976}.
+\item \textbf{Prototipado:} validación mediante mockups de interfaz (MU-01 a MU-20 del ERS de CarniCore).
+\item \textbf{Listas de verificación:} conjuntos de preguntas derivados de estándares (p.\,ej., \cite{iso29148} cláusula 5.2).
+\item \textbf{Perspectivas:} cada revisor adopta el punto de vista de un stakeholder diferente (propietaria, Agrocalidad, encargado de bodega).
+\end{itemize}
+
+\paragraph{Método Fagan: fases y roles.} Fagan \cite{fagan1976} define cinco fases:
+\begin{description}[nosep]
+\item[F1. Planificación:] el moderador asigna roles, define el alcance y convoca.
+\item[F2. Presentación:] el autor expone el documento (puede omitirse si el equipo conoce el ERS).
+\item[F3. Preparación:] cada inspector recorre el documento de forma independiente y registra defectos.
+\item[F4. Reunión de inspección:] el lector parafrasea; los inspectores reportan; el moderador consolida. Está prohibido corregir durante la reunión.
+\item[F5. Corrección y seguimiento:] el autor corrige; el moderador verifica las correcciones.
+\end{description}
+Los roles son: Moderador (coordina, registra, decide el cierre), Lector (parafrasea
+sin leer literalmente), Inspector 1, Inspector 2 e Inspector 3 (detectan defectos desde perspectivas
+asignadas).
+
+\paragraph{Métricas de inspección.} Las métricas clave \cite{pohl2010,wiegers2013} son:
+\begin{itemize}[nosep]
+\item Densidad de defectos: $DD = \dfrac{\text{defectos totales}}{\text{páginas efectivas}}$
+\item Tasa de detección por inspector: $TD_i = \dfrac{\text{defectos únicos del inspector } i}{\text{defectos totales consolidados}}$
+\item Esfuerzo total: suma de horas-persona invertidas en preparación y reunión.
+\item Distribución por tipo: ambigüedad, omisión, inconsistencia, no verificable, no trazable.
+\item Distribución por severidad: crítico, mayor, menor.
+\end{itemize}
+
+\paragraph{Caso aplicado.} Fagan \cite{fagan1976} reportó en proyectos IBM una reducción del 82\,\% en defectos post-entrega
+mediante inspecciones formales frente a revisiones \textit{ad hoc}, con una tasa de rentabilidad
+de 1:10 (costo de detección vs. costo de corrección en producción) -- cifra utilizada en la Sección~10 (C1) para interpretar el costo evitado de los defectos críticos hallados en el ERS de CarniCore.
+
+\subsection{Gestión de Requisitos}
+\paragraph{Gestión de la configuración del ERS.} Según \cite{iso12207} cláusula 6.3.5, la gestión de la configuración garantiza que los artefactos del
+proyecto --incluido el ERS-- se identifiquen, controlen, registren y auditen durante todo
+el ciclo de vida. Una línea base (\textit{baseline}) es una versión formalmente aprobada del ERS
+que solo puede modificarse mediante un proceso de control de cambios \cite{wiegers2013}.
+
+\paragraph{Atributos de requisitos.} \cite{iso29148} cláusula 5.2.8 exige que cada requisito tenga, al menos: identificador único, nombre,
+descripción, prioridad, fuente, estado y criterio de aceptación. El ERS de CarniCore v3.0 incorpora, adicionalmente, los atributos de \textit{Estabilidad} y de \textit{Evidencia} (EV-\textit{XX}), y los atributos de
+trazabilidad (enlace hacia atrás y hacia adelante) \cite{gotel1994}.
+
+\paragraph{Trazabilidad pre- y post-traceability.} Gotel y Finkelstein \cite{gotel1994} distinguen:
+\begin{itemize}[nosep]
+\item \textbf{Pre-traceability:} rastrear un requisito hacia sus fuentes (stakeholder, entrevista, norma). En CarniCore, cada RF referencia el bloque y la pregunta de la entrevista semiestructurada aplicada a la propietaria.
+\item \textbf{Post-traceability:} rastrear un requisito hacia los artefactos de diseño e implementación que lo realizan (caso de uso, clase, módulo, caso de prueba).
+\end{itemize}
+La trazabilidad hacia atrás permite evaluar el impacto de cambios en la fuente; la trazabilidad hacia adelante permite evaluar el impacto de cambios en el requisito sobre los
+artefactos descendentes \cite{cleland2012}.
+
+\paragraph{Proceso de gestión del cambio.} \cite{pmbok7} y \cite{iso12207} describen el ciclo: RFC $\rightarrow$ análisis de impacto $\rightarrow$ decisión del CCB $\rightarrow$ implementación $\rightarrow$ verificación $\rightarrow$ cierre. Las métricas de volatilidad de requisitos incluyen:
+$$\text{tasa de cambio} = \frac{\text{RFC aprobados}}{\text{total de requisitos}}, \qquad \text{tasa de crecimiento} = \frac{\text{requisitos añadidos}}{\text{requisitos baseline}} \; \cite{wiegers2013}.$$
+
+\subsection{Herramientas CASE para IR}
+Las herramientas CASE (\textit{Computer-Aided Software Engineering}) se clasifican en \textit{upper
+CASE} (soportan fases tempranas: requisitos, diseño conceptual), \textit{lower CASE} (soportan
+implementación y pruebas) e \textit{integrated CASE} (cubren todo el ciclo de vida) \cite{swebok2024}.
+
+Para la gestión de requisitos, una herramienta CASE debe ofrecer \cite{pohl2010}: (a) repositorio
+centralizado de requisitos con control de versiones; (b) atributos configurables por el
+equipo; (c) trazabilidad bidireccional con visualización matricial o de grafo; (d) \textit{baselining}
+y comparación de versiones; (e) control de cambios integrado (flujos de aprobación);
+(f) colaboración multiusuario en tiempo real; (g) integración con VCS (Git, SVN) y
+herramientas de pruebas.
+
+\subsection{IR en Procesos Ágiles}
+En entornos ágiles, el artefacto central de gestión de requisitos es el \textit{product backlog},
+compuesto de épicas (agrupaciones funcionales de alto nivel), historias de usuario (formato: “Como [rol], quiero [acción] para [beneficio]”) y criterios de aceptación verificables
+\cite{cohn2004}. El ERS de CarniCore ya redacta 17 historias de usuario en formato Connextra con criterios de aceptación en Gherkin (Dado/Cuando/Entonces) para todo RF \textit{Must}, lo que facilita su migración directa a un backlog ágil (Sección~9).
+
+El \textit{backlog refinement} (\textit{grooming}) asegura que las historias cumplan la \textit{Definition of
+Ready} (DoR) antes de incorporarse al \textit{sprint}: historia bien redactada, estimada, priorizada
+y con criterios de aceptación claros. El BDD (\textit{Behavior-Driven Development}) \cite{smart2014} extiende los criterios de aceptación al
+formato Gherkin, permitiendo que sean ejecutables como pruebas automatizadas.
+
+La trazabilidad en entornos ágiles se mantiene a través de identificadores de \textit{issue}
+enlazados a \textit{commits} de Git, \textit{pipelines} de CI/CD y suites de pruebas automatizadas, en
+lugar de matrices documentales estáticas \cite{cleland2012}. El contraste explícito entre ambos enfoques
+se presenta en la Sección~9.
+
+%======================================================
+\línea; notificaciones configurables & Básica; un usuario a la vez en versión desktop \\
+\hline
+Integración VCS & Nativa con GitHub/GitLab; enlace automático \textit{commit} $\to$ \textit{issue} & Mediante adaptadores de terceros & REST API con GitHub y Jenkins & Sin integración nativa \\
+\hline
+Costo & Gratuito hasta 10 usuarios; desde USD 8,15/usuario/mes & USD 10.000--50.000+/año & USD 50-80/usuario/mes & USD 99/usuario pago único (desktop) \\
+\hline
+Curva de aprendizaje & Baja-media & Alta (formación certificada) & Media & Baja \\
+\hline
+\end{longtable}
+
+\textbf{Recomendación argumentada para el PFC del equipo:} Se recomienda continuar
+con Jira Software (plan Free) como herramienta CASE para CarniCore durante el
+período académico. La razón principal es la combinación de acceso gratuito, integración
+nativa con el repositorio GitHub ya establecido y curva de aprendizaje baja, lo que permite
+al equipo mantener la trazabilidad funcional sin costo adicional. Las limitaciones de Jira en
+trazabilidad formal se mitigan con la matriz de trazabilidad manual mantenida en el repositorio
+(Sección~6.2) y un \textit{plugin} de gestión de requisitos disponible en la versión \textit{free}. Si el proyecto
+escala hacia una certificación formal ante Agrocalidad con más de 100 requisitos, se recomienda
+evaluar Jama Connect por su cobertura de pruebas automatizada y sus plantillas normativas.
+
+%======================================================
+\section{IR Tradicional frente a IR Ágil}
+%======================================================
+\begin{longtable}{|p{2.4cm}|p{5.7cm}|p{5.7cm}|}
+\hline
+\textbf{Dimensión} & \textbf{IR Tradicional} & \textbf{IR Ágil} \\
+\hline
+Documentación & ERS formal y completo (ISO 29148) antes del diseño; documento estático con control de cambios formal; alto esfuerzo inicial, artefactos auditables ante Agrocalidad y el CES a largo plazo. & \textit{Product backlog} como fuente de verdad; las 17 historias de usuario ya redactadas en Gherkin actúan como criterios de aceptación ejecutables; documentación mínima suficiente. \\
+\hline
+Gestión del cambio & Cambios controlados mediante RFC formal, análisis de impacto y aprobación del CCB; costo de cambio elevado en fases avanzadas. & El cambio es bienvenido en cualquier \textit{sprint} mediante refinamiento del \textit{backlog}; costo de cambio bajo en \textit{sprints} cortos. \\
+\hline
+Participación de stakeholders & Intensa en la elicitación (entrevistas, cuestionario); reducida tras firmar el ERS; riesgo de desconexión con la operación diaria de bodega. & Continua: la propietaria o el administrador general participan como \textit{product owner}; demos cada 2 semanas validan con usuarios reales de bodega y despiece. \\
+\hline
+Herramientas & IBM DOORS, Jama Connect, ReqView; requieren licencias costosas, inviables para el presupuesto de una distribuidora familiar. & Jira, GitHub Issues; integradas con CI/CD; accesibles y con curva de aprendizaje baja. \\
+\hline
+Velocidad & El ciclo elicitación--especificación--validación tomó cuatro entregas académicas (1A a 2A); adecuado cuando los errores de trazabilidad regulatoria son costosos (Agrocalidad, LOPDP). & Un MVP funcional en 2--4 \textit{sprints}; adecuado si el negocio necesita digitalizar rápidamente procesos hoy manuales (cuadernos, Excel). \\
+\hline
+Escalabilidad & Escala bien si CarniCore se expande a otras plantas o sucursales, gracias a la documentación formal compartible entre equipos distribuidos. & Escala con marcos como SAFe/LeSS, pero requiere coordinación explícita si se suman más desarrolladores. \\
+\hline
+\end{longtable}
+
+\textbf{¿Cuándo conviene cada enfoque?} La IR tradicional es recomendable para CarniCore en los
+requisitos regulados por Agrocalidad y la LOPDP (trazabilidad, guías de origen, protección de
+datos de proveedores y clientes), donde la documentación formal es exigible ante auditoría. La IR
+ágil conviene para los módulos de reportes gerenciales y el panel resumen (RF-13, RF-14), donde
+los requisitos son más volátiles y la propietaria puede validar incrementalmente cada \textit{sprint}.
+
+%======================================================
+\section{Conclusiones Críticas}
+%======================================================
+\textbf{C1.} La inspección Fagan reveló que el 76,4\,\% de los defectos del ERS de CarniCore v3.0
+eran de severidad crítica o mayor, y que se concentraron precisamente en los requisitos que
+sustentan la propuesta de valor del sistema (RF-25/QR, RF-08 vida útil, RF-06 merma, RNF-02
+disponibilidad). La densidad de 0,71 defectos/página superó el umbral industrial recomendado de
+0,5 \cite{fagan1976}, lo que implica que, sin la inspección formal, el equipo habría trasladado a
+producción una vista pública de trazabilidad sin restricción de datos sensibles (D-01) -- un
+riesgo de exposición de precios y de datos de proveedor incompatible con la LOPDP.
+
+\textbf{C2.} El proceso de CCB demostró que el análisis de impacto basado en la matriz de
+trazabilidad es cualitativamente superior a la estimación intuitiva: el RFC-03 (firma
+veterinaria) evidenció que un requisito ya redactado (RF-02) no estaba efectivamente conectado
+con el requisito de exportación de evidencia (RF-23), un riesgo regulatorio no evidente en la
+descripción inicial del cambio. Este resultado confirma el principio de Gotel y Finkelstein
+\cite{gotel1994}: la trazabilidad \textit{post} no es un artefacto burocrático sino un instrumento
+operativo de gestión del riesgo regulatorio ante Agrocalidad.
+
+\textbf{C3.} La configuración de trazabilidad bidireccional en Jira identificó dos requisitos
+huérfanos (RF-24 sin caso de prueba, RNF-06 sin caso de uso) que habían pasado inadvertidos en
+las tres entregas previas del ERS. La herramienta CASE actuó como red de seguridad que
+automatizó la detección de huecos que la revisión humana no captó, aunque la ausencia de una
+vista matricial nativa en Jira obligó al equipo a mantener la matriz de forma manual en LaTeX,
+introduciendo riesgo de inconsistencia si ambos artefactos no se sincronizan.
+
+\textbf{C4.} La implementación del \textit{baseline} v3.1 con \textit{commits} semánticos distribuidos entre los
+cinco integrantes proporcionó evidencia objetiva de la contribución individual, verificable
+directamente en GitHub, demostrando que el control de versiones es también un mecanismo de
+transparencia y rendición de cuentas en un equipo de cinco personas -- más relevante aún que en
+equipos de cuatro, dado el riesgo de dilución de responsabilidad individual.
+
+\textbf{C5.} La comparativa entre IR tradicional e IR ágil reveló que CarniCore se beneficia de
+un enfoque híbrido: la documentación formal del ERS es necesaria para el cumplimiento
+regulatorio ante Agrocalidad y la LOPDP y para la evaluación académica, pero la gestión
+iterativa del \textit{backlog} en Jira reduce la volatilidad de los requisitos gerenciales (reportes,
+panel resumen) al permitir validaciones incrementales directas con la propietaria de la
+distribuidora, quien participa como usuaria final de bajo perfil técnico.
+
+%======================================================
+\section{Distribución del Trabajo}
+%======================================================
+\begin{longtable}{|p{3.3cm}|p{8.5cm}|p{1.6cm}|}
+\hline
+\textbf{Integrante} & \textbf{Actividades principales} & \textbf{Commits (aprox.)} \\
+\hline
+AMAGUA SACON ROBYN WILLIAN & Planificación de la inspección, moderación de la reunión, redacción del acta CCB, arquitectura del repositorio Git, compilación del informe LaTeX & 3 \\
+\hline
+CRESPO ESPINOZA KLEBER OBED & Preparación individual (6 defectos), rol de lector en la inspección, redacción RFC-01, configuración del tablero Jira, redacción Sección 7 & 3 \\
+\hline
+GAMARRA ARAUJO EDHU XAVIER & Preparación individual (7 defectos), Inspector 1, redacción de correcciones D-01 a D-06, construcción de la matriz de trazabilidad, redacción Secciones 5 y 9 & 2 \\
+\hline
+PONCE RIVERA MERY HELENMEY & Inspector 2, redacción RFC-02, cálculo de métricas de inspección, gráficos, \textit{commits} de \textit{fixes} v3.1, redacción Sección 4 & 2 \\
+\hline
+AMAGUA SACON ROBYN WILLIAN & Preparación individual (5 defectos), Inspector 3, redacción RFC-03, redacción Sección 10 y Anexos & 2 \\
+\hline
+\end{longtable}
+
+La distribución anterior es contrastable con el historial de \textit{commits} del repositorio
+(\texttt{git log --oneline --author=}) y con los \textit{logs} de actividad del tablero Jira.
+
+%======================================================
+\section{Referencias}
+%======================================================
+\bibliographystyle{ieeetr}
+\bibliography{referencias}
+
+%======================================================
+
+
 
 \end{document}
