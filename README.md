@@ -81,11 +81,11 @@ pdflatex PE4_U4_AMAGUA_CRESPO_GAMARRA_PONCE.tex
 ## Tag de línea base
 
 ```bash
-git tag -a baseline-v3.1 -m "Baseline aprobada por CCB - Semana 14 ISR-401 - CarniCore"
-git push origin baseline-v3.1
+git tag -a baseline-v1.1 -m "Baseline aprobada por CCB - Semana 14 ISR-401 - CarniCore"
+git push origin baseline-v1.1
 ```
 
-La etiqueta `baseline-v3.1` marca la versión del ERS aprobada por el CCB el [04/8/2026], que incorpora los cambios derivados de RFC-01 (RF-27), RFC-02 (MFA en RNF-03) y RFC-03 (firma veterinaria en RF-23).
+La etiqueta `baseline-v1.1` marca la versión del ERS aprobada por el CCB el [04/8/2026], que incorpora los cambios derivados de RFC-01 (RF-27), RFC-02 (MFA en RNF-03) y RFC-03 (firma veterinaria en RF-23).
 
 ---
 
@@ -106,7 +106,7 @@ tipo(alcance): descripción breve
 Tipos: docs | fix | feat | chore | refactor
 Ejemplos:
   docs(ers): baseline v3.0 — estructura y secciones 1-2
-  fix(ers): v3.1 correcciones defectos críticos D-01 D-02 D-03 D-04
+  fix(ers): v1.1 correcciones defectos críticos D-01 D-02 D-03 D-04
   feat(jira): matriz de trazabilidad extendida y epics CARN-01..24
 ```
 
