@@ -91,7 +91,7 @@ La etiqueta `baseline-v3.1` marca la versión del ERS aprobada por el CCB el [04
 
 ## Tablero Jira
 
-URL: https://equipo-j.atlassian.net/jira/software/projects/CARNICORE/list?jql=project%20%3D%20CARNICORE%20ORDER%20BY%20cf%5B10019%5D%20ASC
+URL: https://equipo-j.atlassian.net/jira/software/projects/CARNICORE/boards/2/backlog?atlOrigin=eyJpIjoiMDdkZjNhODI0ZmQwNGQ5Mjg5NTc4OTQzMDIwNmEwZGIiLCJwIjoiaiJ9
 
 Épicas: EPIC-01 a EPIC-05 · Issues: CARN-01 a CARN-24  
 Campos personalizados: Prioridad MoSCoW · Fuente del requisito · Estado de verificación
