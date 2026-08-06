@@ -1,6 +1,6 @@
 # CHANGELOG
 
-## [3.1] - 2026-XX-XX
+## [1.1] - 2026-08-05
 
 ### Añadido
 - RF-26: Vista pública de trazabilidad vía QR con campos delimitados (RFC implícito, D-01).
@@ -21,6 +21,6 @@
 - RNF-14: Plazo máximo de recuperación offline de 5 minutos.
 - Glosario: Distinción entre merma de faenamiento y merma de despiece.
 
-## [3.0] - 2026-08-02
+## [1.0] - 2026-08-02
 
 - Versión previa del ERS - Entrega 2A (25 RF, 15 RNF).
