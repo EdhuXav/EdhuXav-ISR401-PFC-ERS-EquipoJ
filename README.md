@@ -23,8 +23,8 @@ ISR401-PFC-ERS-EquipoJ/
 ├── README.md                          ← este archivo
 ├── CHANGELOG.md                       ← historial de versiones del ERS
 ├── 01_ERS/
-│   ├── ERS_v3.0.pdf                   ← versión baseline pre-inspección
-│   ├── ERS_v3.1.pdf                   ← versión corregida post-CCB
+│   ├── ERS_v1.0.pdf                   ← versión baseline pre-inspección
+│   ├── ERS_v1.1.pdf                   ← versión corregida post-CCB
 │   └── fuentes/                       ← archivos .tex fuente del ERS
 ├── 02_Inspeccion/
 │   ├── AnexoA_checklists/
@@ -43,9 +43,9 @@ ISR401-PFC-ERS-EquipoJ/
 │   ├── backlog_export.csv             ← exportación real desde Jira
 │   └── capturas/  
 ├── 05_Informe/
-│   ├── PE4_CarniCore_EquipoJ.tex
+│   ├── PE4_U4_AMAGUA_CRESPO_GAMARRA_PONCE.tex
 │   ├── references.bib
-│   └── PE4_CarniCore_EquipoJ.pdf
+│   └── PE4_U4_AMAGUA_CRESPO_GAMARRA_PONCE.pdf
 └── 06_Evidencias/
     ├── capturas_git/
     │   ├── git_log_graph.png          
@@ -59,19 +59,19 @@ ISR401-PFC-ERS-EquipoJ/
 ## Compilar el informe (Overleaf o local)
 
 ### Overleaf (recomendado)
-1. Crear nuevo proyecto → **Subir proyecto** → seleccionar `PE4_CarniCore_EquipoJ_Overleaf.zip`
+1. Crear nuevo proyecto → **Subir proyecto** → seleccionar `PE4_U4_AMAGUA_CRESPO_GAMARRA_PONCE.zip`
 2. Compilador: **pdfLaTeX**
-3. Archivo principal: `PE4_CarniCore_EquipoJ.tex`
+3. Archivo principal: `PE4_U4_AMAGUA_CRESPO_GAMARRA_PONCE.tex`
 4. Ejecutar compilación **3 veces** (pdfLaTeX → BibTeX → pdfLaTeX → pdfLaTeX) para resolver referencias cruzadas y bibliografía.
 
 ### Local (TeX Live / MiKTeX)
 ```bash
 # Requisitos: TeX Live 2023+ con paquetes completos
 cd 05_Informe/
-pdflatex PE4_CarniCore_EquipoJ.tex
-bibtex   PE4_CarniCore_EquipoJ
-pdflatex PE4_CarniCore_EquipoJ.tex
-pdflatex PE4_CarniCore_EquipoJ.tex
+pdflatex PE4_U4_AMAGUA_CRESPO_GAMARRA_PONCE.tex
+bibtex   PE4_U4_AMAGUA_CRESPO_GAMARRA_PONCE
+pdflatex PE4_U4_AMAGUA_CRESPO_GAMARRA_PONCE.tex
+pdflatex PE4_U4_AMAGUA_CRESPO_GAMARRA_PONCE.tex
 ```
 
 **Paquetes LaTeX requeridos:** `geometry`, `graphicx`, `booktabs`, `longtable`, `array`, `multirow`, `colortbl`, `xcolor`, `hyperref`, `float`, `pgf-pie`, `tikz`, `pgfplots`, `listings`, `fancyhdr`, `natbib` (o `ieeetr`), `inputenc` (utf8), `babel` (spanish).
