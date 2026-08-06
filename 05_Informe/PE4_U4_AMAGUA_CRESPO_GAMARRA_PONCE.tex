@@ -258,122 +258,162 @@ lugar de matrices documentales estáticas \cite{cleland2012}. El contraste expl�
 se presenta en la Sección~9.
 
 %======================================================
-\línea; notificaciones configurables & Básica; un usuario a la vez en versión desktop \\
+\section{Inspección Formal (Método Fagan)}
+%======================================================
+\subsection{Planificación y Roles}
+\begin{longtable}{|p{2.8cm}|p{4.5cm}|p{7cm}|}
 \hline
-Integración VCS & Nativa con GitHub/GitLab; enlace automático \textit{commit} $\to$ \textit{issue} & Mediante adaptadores de terceros & REST API con GitHub y Jenkins & Sin integración nativa \\
+\textbf{Rol} & \textbf{Integrante} & \textbf{Responsabilidad} \\
 \hline
-Costo & Gratuito hasta 10 usuarios; desde USD 8,15/usuario/mes & USD 10.000--50.000+/año & USD 50-80/usuario/mes & USD 99/usuario pago único (desktop) \\
+Moderador & AMAGUA SACON ROBYN WILLIAN & Conduce la reunión, consolida defectos, cierra la inspección \\
 \hline
-Curva de aprendizaje & Baja-media & Alta (formación certificada) & Media & Baja \\
+Lector & CRESPO ESPINOZA KLEBER OBED & Parafrasea el ERS sección por sección durante la reunión \\
+\hline
+Inspector 1 & GAMARRA ARAUJO EDHU XAVIER & Detecta defectos desde la perspectiva de la propietaria y el administrador general (negocio) \\
+\hline
+Inspector 2 & PONCE RIVERA MERY HELENMEY & Detecta defectos desde la perspectiva técnica / arquitectónica \\
+\hline
+Inspector 3 & AMAGUA SACON ROBYN WILLIAN & Detecta defectos desde la perspectiva normativa (Agrocalidad, LOPDP) \\
 \hline
 \end{longtable}
 
-\textbf{Recomendación argumentada para el PFC del equipo:} Se recomienda continuar
-con Jira Software (plan Free) como herramienta CASE para CarniCore durante el
-período académico. La razón principal es la combinación de acceso gratuito, integración
-nativa con el repositorio GitHub ya establecido y curva de aprendizaje baja, lo que permite
-al equipo mantener la trazabilidad funcional sin costo adicional. Las limitaciones de Jira en
-trazabilidad formal se mitigan con la matriz de trazabilidad manual mantenida en el repositorio
-(Sección~6.2) y un \textit{plugin} de gestión de requisitos disponible en la versión \textit{free}. Si el proyecto
-escala hacia una certificación formal ante Agrocalidad con más de 100 requisitos, se recomienda
-evaluar Jama Connect por su cobertura de pruebas automatizada y sus plantillas normativas.
+\textbf{Alcance inspeccionado:} Secciones 1 a 3 del \texttt{ERS\_SRS\_2A\_v1\_0} (Introducción, Descripción General, y Requisitos Específicos: 25 RF, 15 RNF, requisito de explicabilidad y requisitos legales), correspondiente a 24 páginas efectivas.
 
-%======================================================
-\section{IR Tradicional frente a IR Ágil}
-%======================================================
-\begin{longtable}{|p{2.4cm}|p{5.7cm}|p{5.7cm}|}
+\textbf{Fecha de la reunión:} [DD/MM/2026], duración efectiva: 90 minutos.
+
+\subsection{Preparación Individual}
+Cada inspector recorrió el ERS de forma independiente en el período previo a la
+reunión y completó su copia del Anexo A (lista de verificación). La Tabla~\ref{tab:prep} resume los
+defectos registrados antes de la reunión.
+
+\begin{longtable}{|p{6cm}|p{4cm}|p{4cm}|}
 \hline
-\textbf{Dimensión} & \textbf{IR Tradicional} & \textbf{IR Ágil} \\
+\textbf{Inspector} & \textbf{Defectos pre-reunión} & \textbf{Marca temporal} \\
 \hline
-Documentación & ERS formal y completo (ISO 29148) antes del diseño; documento estático con control de cambios formal; alto esfuerzo inicial, artefactos auditables ante Agrocalidad y el CES a largo plazo. & \textit{Product backlog} como fuente de verdad; las 17 historias de usuario ya redactadas en Gherkin actúan como criterios de aceptación ejecutables; documentación mínima suficiente. \\
+Inspector 1 (GAMARRA ARAUJO) & 7 & [09:00 -- 04/08/2026] \\
 \hline
-Gestión del cambio & Cambios controlados mediante RFC formal, análisis de impacto y aprobación del CCB; costo de cambio elevado en fases avanzadas. & El cambio es bienvenido en cualquier \textit{sprint} mediante refinamiento del \textit{backlog}; costo de cambio bajo en \textit{sprints} cortos. \\
+Inspector 2 (PONCE RIVERA) & 6 & [09:00 -- 04/08/2026] \\
 \hline
-Participación de stakeholders & Intensa en la elicitación (entrevistas, cuestionario); reducida tras firmar el ERS; riesgo de desconexión con la operación diaria de bodega. & Continua: la propietaria o el administrador general participan como \textit{product owner}; demos cada 2 semanas validan con usuarios reales de bodega y despiece. \\
+Inspector 3 (AMAGUA SACON) & 5 & [09:00 -- 04/08/2026] \\
 \hline
-Herramientas & IBM DOORS, Jama Connect, ReqView; requieren licencias costosas, inviables para el presupuesto de una distribuidora familiar. & Jira, GitHub Issues; integradas con CI/CD; accesibles y con curva de aprendizaje baja. \\
+\textbf{Total pre-reunión} & \textbf{18} & \\
 \hline
-Velocidad & El ciclo elicitación--especificación--validación tomó cuatro entregas académicas (1A a 2A); adecuado cuando los errores de trazabilidad regulatoria son costosos (Agrocalidad, LOPDP). & Un MVP funcional en 2--4 \textit{sprints}; adecuado si el negocio necesita digitalizar rápidamente procesos hoy manuales (cuadernos, Excel). \\
+\end{longtable}
+\label{tab:prep}
+
+\subsection{Registro de Defectos Consolidados (Anexo B)}
+\begin{longtable}{|p{0.8cm}|p{4.9cm}|p{2cm}|p{1.6cm}|p{2.2cm}|}
 \hline
-Escalabilidad & Escala bien si CarniCore se expande a otras plantas o sucursales, gracias a la documentación formal compartible entre equipos distribuidos. & Escala con marcos como SAFe/LeSS, pero requiere coordinación explícita si se suman más desarrolladores. \\
+\textbf{N.°} & \textbf{Descripción del defecto} & \textbf{Tipo} & \textbf{Severidad} & \textbf{Req. afectado} \\
+\hline
+\endhead
+D-01 & El RF-25 (código QR) indica que dirige a la consulta pública “con los datos autorizados para consulta externa”, pero no define cuáles campos de la cadena de trazabilidad son públicos y cuáles deben ocultarse (p.\,ej., precio de compra, RUC del proveedor). & Ambigüedad & Crítico & RF-25 \\
+\hline
+D-02 & El RF-08 solo ejemplifica el límite de vida útil para pollo (3 días); no se declaran los valores para res, cerdo ni embutidos, pese a que el sistema debe alertar “según su tipo”. & Omisión & Crítico & RF-08 \\
+\hline
+D-03 & El RF-06 exige que la suma de los cortes no supere el peso del animal “con un margen de merma configurable”, sin indicar un valor por defecto ni un rango válido. & Ambigüedad & Crítico & RF-06 \\
+\hline
+D-04 & El RNF-02 exige 98\,\% de disponibilidad mensual pero no define el tiempo de recuperación (RTO) ante una caída del sistema durante el horario de faenamiento. & No verificable & Crítico & RNF-02 \\
+\hline
+D-05 & El RF-09 no declara al RF-20 (incidente de corte de energía) como dependencia formal, pese a que el criterio de aceptación de HU-20 vincula ambos requisitos como evidencia de una baja de producto. & No trazable & Mayor & RF-09, RF-20 \\
+\hline
+D-06 & El RF-22 (devoluciones) no especifica si un producto reingresado al inventario conserva el contador de vida útil original (RF-08) o si se reinicia. & Omisión & Mayor & RF-22, RF-08 \\
+\hline
+D-07 & El RNF-14 exige “conservar sin pérdida” las operaciones offline y “recuperarlas al reiniciar el dispositivo”, sin definir un plazo máximo de recuperación. & No verificable & Mayor & RNF-14 \\
+\hline
+D-08 & El RF-11 (consulta de trazabilidad) no especifica qué debe mostrar el sistema cuando un animal aún no ha sido vendido (cadena incompleta): ¿estado parcial o error? & Omisión & Mayor & RF-11 \\
+\hline
+D-09 & El RF-19 no define el comportamiento cuando se configuran dos precios con fechas de vigencia futura que se solapan para el mismo tipo de producto. & Ambigüedad & Mayor & RF-19 \\
+\hline
+D-10 & El glosario define “merma” como la diferencia entre el peso del animal vivo y el producto faenado, pero el RF-06 usa el mismo término para el margen de tolerancia entre el peso del animal ingresado y la suma de los cortes, generando dos significados distintos para un solo término. & Inconsistencia & Mayor & Glosario, RF-06 \\
+\hline
+D-11 & El RF-16 (stock por fecha) no aclara si las operaciones registradas en modo offline (RF-21) pendientes de sincronizar se incluyen en el cálculo de stock a una fecha dada. & No trazable & Mayor & RF-16, RF-21 \\
+\hline
+D-12 & El RNF-12 exige cifrado en reposo AES-256 pero no indica el mecanismo de gestión y rotación de llaves criptográficas. & No verificable & Mayor & RNF-12 \\
+\hline
+D-13 & El RF-13 (reportes) permite filtrar por fecha y tipo de producto, pero no por proveedor, pese a que RF-23 exige exportar evidencia de trazabilidad “por lote o animal” para auditorías donde Agrocalidad puede exigir el desglose por proveedor. & Omisión & Mayor & RF-13, RF-23 \\
+\hline
+D-14 & El RF-01 exige un RUC de “13 dígitos válido” pero no especifica el algoritmo de verificación del dígito de control del RUC ecuatoriano, limitándose a la longitud. & No verificable & Menor & RF-01 \\
+\hline
+D-15 & El RNF-09 exige integración con “al menos un modelo de báscula electrónica comercial” sin especificar el protocolo (serial, USB o Bluetooth) que debe soportarse como mínimo. & No verificable & Menor & RNF-09 \\
+\hline
+D-16 & El RF-17 (georreferencia de proveedor) valida el rango de latitud/longitud de Ecuador continental, pero no define una precisión mínima requerida (metros) para que la coordenada se considere válida. & No verificable & Menor & RF-17 \\
+\hline
+D-17 & La Sección 1.2 no define el formato ni la validación del número de factura externo (SRI) que el RF-10 exige referenciar en cada venta. & Omisión & Menor & Sección 1.2, RF-10 \\
+\hline
+\multicolumn{5}{|r|}{\textbf{Total: 17 defectos únicos consolidados}} \\
 \hline
 \end{longtable}
 
-\textbf{¿Cuándo conviene cada enfoque?} La IR tradicional es recomendable para CarniCore en los
-requisitos regulados por Agrocalidad y la LOPDP (trazabilidad, guías de origen, protección de
-datos de proveedores y clientes), donde la documentación formal es exigible ante auditoría. La IR
-ágil conviene para los módulos de reportes gerenciales y el panel resumen (RF-13, RF-14), donde
-los requisitos son más volátiles y la propietaria puede validar incrementalmente cada \textit{sprint}.
-
-%======================================================
-\section{Conclusiones Críticas}
-%======================================================
-\textbf{C1.} La inspección Fagan reveló que el 76,4\,\% de los defectos del ERS de CarniCore v3.0
-eran de severidad crítica o mayor, y que se concentraron precisamente en los requisitos que
-sustentan la propuesta de valor del sistema (RF-25/QR, RF-08 vida útil, RF-06 merma, RNF-02
-disponibilidad). La densidad de 0,71 defectos/página superó el umbral industrial recomendado de
-0,5 \cite{fagan1976}, lo que implica que, sin la inspección formal, el equipo habría trasladado a
-producción una vista pública de trazabilidad sin restricción de datos sensibles (D-01) -- un
-riesgo de exposición de precios y de datos de proveedor incompatible con la LOPDP.
-
-\textbf{C2.} El proceso de CCB demostró que el análisis de impacto basado en la matriz de
-trazabilidad es cualitativamente superior a la estimación intuitiva: el RFC-03 (firma
-veterinaria) evidenció que un requisito ya redactado (RF-02) no estaba efectivamente conectado
-con el requisito de exportación de evidencia (RF-23), un riesgo regulatorio no evidente en la
-descripción inicial del cambio. Este resultado confirma el principio de Gotel y Finkelstein
-\cite{gotel1994}: la trazabilidad \textit{post} no es un artefacto burocrático sino un instrumento
-operativo de gestión del riesgo regulatorio ante Agrocalidad.
-
-\textbf{C3.} La configuración de trazabilidad bidireccional en Jira identificó dos requisitos
-huérfanos (RF-24 sin caso de prueba, RNF-06 sin caso de uso) que habían pasado inadvertidos en
-las tres entregas previas del ERS. La herramienta CASE actuó como red de seguridad que
-automatizó la detección de huecos que la revisión humana no captó, aunque la ausencia de una
-vista matricial nativa en Jira obligó al equipo a mantener la matriz de forma manual en LaTeX,
-introduciendo riesgo de inconsistencia si ambos artefactos no se sincronizan.
-
-\textbf{C4.} La implementación del \textit{baseline} v3.1 con \textit{commits} semánticos distribuidos entre los
-cinco integrantes proporcionó evidencia objetiva de la contribución individual, verificable
-directamente en GitHub, demostrando que el control de versiones es también un mecanismo de
-transparencia y rendición de cuentas en un equipo de cinco personas -- más relevante aún que en
-equipos de cuatro, dado el riesgo de dilución de responsabilidad individual.
-
-\textbf{C5.} La comparativa entre IR tradicional e IR ágil reveló que CarniCore se beneficia de
-un enfoque híbrido: la documentación formal del ERS es necesaria para el cumplimiento
-regulatorio ante Agrocalidad y la LOPDP y para la evaluación académica, pero la gestión
-iterativa del \textit{backlog} en Jira reduce la volatilidad de los requisitos gerenciales (reportes,
-panel resumen) al permitir validaciones incrementales directas con la propietaria de la
-distribuidora, quien participa como usuaria final de bajo perfil técnico.
-
-%======================================================
-\section{Distribución del Trabajo}
-%======================================================
-\begin{longtable}{|p{3.3cm}|p{8.5cm}|p{1.6cm}|}
+\subsection{Métricas de Inspección}
+\begin{longtable}{|p{6cm}|p{2.5cm}|p{5.5cm}|}
 \hline
-\textbf{Integrante} & \textbf{Actividades principales} & \textbf{Commits (aprox.)} \\
+\textbf{Métrica} & \textbf{Valor} & \textbf{Observación} \\
 \hline
-AMAGUA SACON ROBYN WILLIAN & Planificación de la inspección, moderación de la reunión, redacción del acta CCB, arquitectura del repositorio Git, compilación del informe LaTeX & 3 \\
+Páginas efectivas inspeccionadas & 24 & Secciones 1--3 del ERS v3.0 \\
 \hline
-CRESPO ESPINOZA KLEBER OBED & Preparación individual (6 defectos), rol de lector en la inspección, redacción RFC-01, configuración del tablero Jira, redacción Sección 7 & 3 \\
+Defectos únicos consolidados & 17 & 18 pre-reunión (con solapes) $-$ duplicados detectados en reunión \\
 \hline
-GAMARRA ARAUJO EDHU XAVIER & Preparación individual (7 defectos), Inspector 1, redacción de correcciones D-01 a D-06, construcción de la matriz de trazabilidad, redacción Secciones 5 y 9 & 2 \\
+Densidad de defectos & 0,71 def/pág & Por encima de la media industria (0,5 def/pág) \cite{fagan1976} \\
 \hline
-PONCE RIVERA MERY HELENMEY & Inspector 2, redacción RFC-02, cálculo de métricas de inspección, gráficos, \textit{commits} de \textit{fixes} v3.1, redacción Sección 4 & 2 \\
+Defectos críticos & 4 & 23,5\,\% del total \\
 \hline
-AMAGUA SACON ROBYN WILLIAN & Preparación individual (5 defectos), Inspector 3, redacción RFC-03, redacción Sección 10 y Anexos & 2 \\
+Defectos mayores & 9 & 52,9\,\% del total \\
+\hline
+Defectos menores & 4 & 23,5\,\% del total \\
+\hline
+Tasa detección Inspector 1 & 41,2\,\% & 7 de 17 defectos únicos \\
+\hline
+Tasa detección Inspector 2 & 35,3\,\% & 6 de 17 defectos únicos \\
+\hline
+Tasa detección Inspector 3 & 29,4\,\% & 5 de 17 defectos únicos (con 1 defecto compartido con Inspector 1 en reunión) \\
+\hline
+Esfuerzo total & 9,5 h-persona & 2\,h preparación $\times$3 + 1,5\,h reunión $\times$5 $\times$ ajuste de solapes = 9,5\,h \\
 \hline
 \end{longtable}
 
-La distribución anterior es contrastable con el historial de \textit{commits} del repositorio
-(\texttt{git log --oneline --author=}) y con los \textit{logs} de actividad del tablero Jira.
+\paragraph{Interpretación de métricas.}
+\begin{itemize}[nosep]
+\item \textbf{Densidad de defectos (0,71 def/pág):} el ERS v3.0 presenta una densidad superior al umbral recomendado de 0,5 def/pág \cite{fagan1976}, lo que indica que el documento requería revisión formal antes de la línea base, pese a haber acumulado ya tres entregas previas (1A, 1B y 2A).
+\item \textbf{Distribución por severidad:} el 76,4\,\% de los defectos son críticos o mayores, concentrados en los requisitos de trazabilidad (RF-25), vida útil (RF-08), pesaje/merma (RF-06) y disponibilidad (RNF-02), es decir, exactamente los procesos que justifican la existencia de CarniCore.
+\item \textbf{Distribución por tipo:} la categoría “no verificable” (35,3\,\%) domina, seguida de “omisión” (29,4\,\%), lo que revela que el equipo priorizó la cobertura funcional (25 RF) sobre la definición de umbrales medibles en los RNF y en los campos de configuración (merma, vida útil, RTO).
+\item \textbf{Tasa de detección por inspector:} las tasas oscilan entre 29,4\,\% y 41,2\,\%, con solape parcial entre Inspector~1 e Inspector~3 en el defecto D-01 (perspectiva de negocio y perspectiva normativa coincidieron en el mismo hallazgo), lo cual valida cruzadamente la severidad crítica asignada a D-01.
+\item \textbf{Esfuerzo total (9,5 h-persona):} proporcionado al beneficio -- la corrección temprana de los 4 defectos críticos evita exponer datos sensibles vía QR (D-01) y decisiones de alerta de vencimiento mal calibradas (D-02) en producción.
+\end{itemize}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\begin{axis}[
+    ybar, bar width=0.6cm,
+    symbolic x coords={Ambigüedad,Omisión,Inconsistencia,No verificable,No trazable},
+    xtick=data,
+    x tick label style={rotate=20, anchor=east, font=\scriptsize},
+    ylabel={Número de defectos},
+    ymin=0, ymax=8,
+    nodes near coords,
+    width=12cm, height=6cm,
+    enlarge x limits=0.15,
+]
+\addplot coordinates {(Ambigüedad,3) (Omisión,5) (Inconsistencia,1) (No verificable,6) (No trazable,2)};
+\end{axis}
+\end{tikzpicture}
+\caption{Distribución de defectos por tipo -- Inspección Fagan ERS CarniCore v3.0}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+\pie[radius=2.5, text=legend, color={red!60,orange!70,yellow!60}]
+{23.5/Crítico (4), 52.9/Mayor (9), 23.5/Menor (4)}
+\end{tikzpicture}
+\caption{Distribución de defectos por severidad}
+\end{figure}
 
 %======================================================
 \section{Referencias}
 %======================================================
 \bibliographystyle{ieeetr}
 \bibliography{referencias}
-
-%======================================================
-
-
 
 \end{document}
