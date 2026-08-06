@@ -411,9 +411,51 @@ Esfuerzo total & 9,5 h-persona & 2\,h preparación $\times$3 + 1,5\,h reunión $
 \end{figure}
 
 %======================================================
+\section{Correcciones Aplicadas}
+%======================================================
+Se corrigió el 100\,\% de los defectos críticos (D-01, D-02, D-03, D-04) y el 100\,\% de los
+defectos mayores (D-05 a D-13). Los defectos menores D-14, D-15, D-16 y D-17 no fueron
+corregidos en v3.1 por decisión del CCB (baja prioridad, sin impacto en validez funcional
+inmediata); quedan registrados en el \textit{backlog} para la Entrega 2B.
+
+\begin{longtable}{|p{0.8cm}|p{5.4cm}|p{5.4cm}|p{1.4cm}|}
+\hline
+\textbf{N.°} & \textbf{Texto ANTES} & \textbf{Texto DESPUÉS} & \textbf{Req.} \\
+\hline
+\endhead
+D-01 & “...dirija a la consulta pública de trazabilidad con los datos autorizados para consulta externa.” & Se añade RF-26: “La vista pública de trazabilidad accesible vía QR mostrará únicamente: tipo de producto, fecha de faenamiento, granja/proveedor de origen (nombre comercial, sin RUC), cámara de destino y fecha de venta. Quedan excluidos de la vista pública: RUC del proveedor, precio por libra, costo total y datos de contacto de clientes.” & RF-25 $\to$ RF-26 \\
+\hline
+D-02 & “...calcular los días restantes de vida útil...según su tipo (por ejemplo, máximo 3 días para pollo)...” & “El sistema calculará los días restantes de vida útil según el tipo de producto, con los siguientes límites configurables por defecto: pollo 3 días, res 7 días, cerdo 5 días, embutidos 15 días; el administrador general podrá modificar estos valores mediante parametrización (RNF-10).” & RF-08 \\
+\hline
+D-03 & “...la suma de los pesos de los cortes no supera el peso del animal ingresado, con un margen de merma configurable.” & “...con un margen de merma configurable, con un valor por defecto del 3\,\% del peso del animal ingresado y un rango editable entre 1\,\% y 8\,\%; fuera de ese rango el sistema exige confirmación explícita del administrador general.” & RF-06 \\
+\hline
+D-04 & “El sistema deberá estar disponible al menos el 98\,\% del tiempo mensual...” & “...98\,\% del tiempo mensual...Ante una caída del sistema, el tiempo de recuperación (RTO) no deberá superar los 30 minutos durante el horario de faenamiento (10:00--02:00) y los 2 horas fuera de dicho horario.” & RNF-02 \\
+\hline
+D-05 & RF-09 sin mención de RF-20 en “Dependencias”. & Se añade a RF-09: “Dependencias: RF-07, RF-20 (cuando la baja se sustente en pérdida de cadena de frío).” Se declara el enlace RF-09 $\to$ RF-20 en la matriz de trazabilidad (Sección~6). & RF-09 \\
+\hline
+D-06 & Sin mención en RF-22. & “Un producto reingresado por devolución conserva el contador de vida útil original (RF-08) calculado desde su fecha de ingreso a cámara (RF-07), y no se reinicia.” & RF-22 \\
+\hline
+D-07 & “...recuperarlas al reiniciar el dispositivo.” & “...recuperarlas en un plazo máximo de 5 minutos tras el reinicio del dispositivo o el restablecimiento de la conectividad, lo que ocurra primero.” & RNF-14 \\
+\hline
+D-08 & Sin mención de cadena incompleta en RF-11. & “Si la cadena de trazabilidad de un lote/animal está incompleta (por ejemplo, aún no vendido), el sistema mostrará el estado parcial disponible con la etiqueta \textit{“En proceso”} en lugar de un mensaje de error.” & RF-11 \\
+\hline
+D-09 & Sin regla de solape en RF-19. & “Si existen dos configuraciones de precio con fechas de vigencia futura que se solapan para el mismo tipo de producto, el sistema rechazará el registro de la segunda hasta que se ajuste o elimine el solape.” & RF-19 \\
+\hline
+D-10 & Glosario: “Merma: diferencia de peso entre el animal vivo y el producto faenado.” (usado también en RF-06 con otro sentido) & Se añade al glosario: “Merma de despiece: tolerancia configurable (RF-06) entre el peso del animal ingresado y la suma de los cortes registrados, distinta de la merma de faenamiento (diferencia entre animal vivo y canal).” & Glosario, RF-06 \\
+\hline
+D-11 & Sin mención de operaciones offline pendientes en RF-16. & “El cálculo de stock a una fecha dada excluirá las operaciones registradas en modo offline (RF-21) que aún no hayan sido sincronizadas; el sistema mostrará una advertencia de “stock provisional” mientras existan sincronizaciones pendientes.” & RF-16, RF-21 \\
+\hline
+D-12 & Sin mención de gestión de llaves en RNF-12. & “...cifrados en reposo (AES-256)...Las llaves de cifrado se gestionarán mediante un servicio de gestión de llaves (KMS) con rotación obligatoria cada 90 días.” & RNF-12 \\
+\hline
+D-13 & RF-13 filtrable “por rango de fechas y tipo de producto”. & Se añade RF-27: “El sistema permitirá filtrar los reportes de ventas, compras y pérdidas adicionalmente por proveedor, para su desglose ante auditorías de Agrocalidad referenciadas en RF-23.” & RF-13 $\to$ + RF-27 \\
+\hline
+\end{longtable}
+
+%======================================================
 \section{Referencias}
 %======================================================
 \bibliographystyle{ieeetr}
 \bibliography{referencias}
+
 
 \end{document}
