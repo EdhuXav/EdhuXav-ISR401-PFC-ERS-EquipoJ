@@ -121,7 +121,7 @@ gestión del cambio y trazabilidad sobre la Especificación de Requisitos Softwa
 del sistema \textbf{CarniCore} -- Sistema de Trazabilidad, Pesaje Inteligente e Inventario para la
 Distribuidora de Cárnicos Pucayacu (La Maná, Cotopaxi) --, proyecto fin de curso del equipo.
 Se ejecutó una inspección formal Fagan con cinco roles diferenciados sobre las secciones 1 a 3
-del ERS v3.0 (25 RF y 15 RNF), se registraron y corrigieron los defectos hallados, y se tramitaron
+del ERS v1.0 (25 RF y 15 RNF), se registraron y corrigieron los defectos hallados, y se tramitaron
 tres solicitudes de cambio (RFC) ante un Change Control Board (CCB) simulado. Posteriormente,
 la trazabilidad bidireccional del ERS se implementó en Jira, se estableció la línea base mediante
 control de versiones Git con etiqueta anotada y CHANGELOG, y se compararon metodológicamente
@@ -216,7 +216,7 @@ el ciclo de vida. Una línea base (\textit{baseline}) es una versión formalment
 que solo puede modificarse mediante un proceso de control de cambios \cite{wiegers2013}.
 
 \paragraph{Atributos de requisitos.} \cite{iso29148} cláusula 5.2.8 exige que cada requisito tenga, al menos: identificador único, nombre,
-descripción, prioridad, fuente, estado y criterio de aceptación. El ERS de CarniCore v3.0 incorpora, adicionalmente, los atributos de \textit{Estabilidad} y de \textit{Evidencia} (EV-\textit{XX}), y los atributos de
+descripción, prioridad, fuente, estado y criterio de aceptación. El ERS de CarniCore v1.0 incorpora, adicionalmente, los atributos de \textit{Estabilidad} y de \textit{Evidencia} (EV-\textit{XX}), y los atributos de
 trazabilidad (enlace hacia atrás y hacia adelante) \cite{gotel1994}.
 
 \paragraph{Trazabilidad pre- y post-traceability.} Gotel y Finkelstein \cite{gotel1994} distinguen:
@@ -350,7 +350,7 @@ D-17 & La Sección 1.2 no define el formato ni la validación del número de fac
 \hline
 \textbf{Métrica} & \textbf{Valor} & \textbf{Observación} \\
 \hline
-Páginas efectivas inspeccionadas & 24 & Secciones 1--3 del ERS v3.0 \\
+Páginas efectivas inspeccionadas & 24 & Secciones 1--3 del ERS v1.0 \\
 \hline
 Defectos únicos consolidados & 17 & 18 pre-reunión (con solapes) $-$ duplicados detectados en reunión \\
 \hline
@@ -374,7 +374,7 @@ Esfuerzo total & 9,5 h-persona & 2\,h preparación $\times$3 + 1,5\,h reunión $
 
 \paragraph{Interpretación de métricas.}
 \begin{itemize}[nosep]
-\item \textbf{Densidad de defectos (0,71 def/pág):} el ERS v3.0 presenta una densidad superior al umbral recomendado de 0,5 def/pág \cite{fagan1976}, lo que indica que el documento requería revisión formal antes de la línea base, pese a haber acumulado ya tres entregas previas (1A, 1B y 2A).
+\item \textbf{Densidad de defectos (0,71 def/pág):} el ERS v1.0 presenta una densidad superior al umbral recomendado de 0,5 def/pág \cite{fagan1976}, lo que indica que el documento requería revisión formal antes de la línea base, pese a haber acumulado ya tres entregas previas (1A, 1B y 2A).
 \item \textbf{Distribución por severidad:} el 76,4\,\% de los defectos son críticos o mayores, concentrados en los requisitos de trazabilidad (RF-25), vida útil (RF-08), pesaje/merma (RF-06) y disponibilidad (RNF-02), es decir, exactamente los procesos que justifican la existencia de CarniCore.
 \item \textbf{Distribución por tipo:} la categoría “no verificable” (35,3\,\%) domina, seguida de “omisión” (29,4\,\%), lo que revela que el equipo priorizó la cobertura funcional (25 RF) sobre la definición de umbrales medibles en los RNF y en los campos de configuración (merma, vida útil, RTO).
 \item \textbf{Tasa de detección por inspector:} las tasas oscilan entre 29,4\,\% y 41,2\,\%, con solape parcial entre Inspector~1 e Inspector~3 en el defecto D-01 (perspectiva de negocio y perspectiva normativa coincidieron en el mismo hallazgo), lo cual valida cruzadamente la severidad crítica asignada a D-01.
@@ -398,7 +398,7 @@ Esfuerzo total & 9,5 h-persona & 2\,h preparación $\times$3 + 1,5\,h reunión $
 \addplot coordinates {(Ambigüedad,3) (Omisión,5) (Inconsistencia,1) (No verificable,6) (No trazable,2)};
 \end{axis}
 \end{tikzpicture}
-\caption{Distribución de defectos por tipo -- Inspección Fagan ERS CarniCore v3.0}
+\caption{Distribución de defectos por tipo -- Inspección Fagan ERS CarniCore v1.0}
 \end{figure}
 
 \begin{figure}[H]
@@ -415,7 +415,7 @@ Esfuerzo total & 9,5 h-persona & 2\,h preparación $\times$3 + 1,5\,h reunión $
 %======================================================
 Se corrigió el 100\,\% de los defectos críticos (D-01, D-02, D-03, D-04) y el 100\,\% de los
 defectos mayores (D-05 a D-13). Los defectos menores D-14, D-15, D-16 y D-17 no fueron
-corregidos en v3.1 por decisión del CCB (baja prioridad, sin impacto en validez funcional
+corregidos en v1.1 por decisión del CCB (baja prioridad, sin impacto en validez funcional
 inmediata); quedan registrados en el \textit{backlog} para la Entrega 2B.
 
 \begin{longtable}{|p{0.8cm}|p{5.4cm}|p{5.4cm}|p{1.4cm}|}
@@ -538,11 +538,11 @@ Agenda & 1. Apertura y quórum. 2. Revisión RFC-01 (mermas por proveedor). 3. R
 
 \textbf{Deliberación y decisiones:}
 \begin{itemize}[nosep]
-\item \textbf{RFC-01 -- Mermas por proveedor.} El administrador general confirmó que el reporte se requiere antes del cierre del período de faenamiento. Decisión: \textbf{APROBADO}. Responsable: GAMARRA ARAUJO (desarrollo). Plazo: Sprint 8 (2 semanas). Nueva versión del ERS: v3.1 (incluye RF-27).
+\item \textbf{RFC-01 -- Mermas por proveedor.} El administrador general confirmó que el reporte se requiere antes del cierre del período de faenamiento. Decisión: \textbf{APROBADO}. Responsable: GAMARRA ARAUJO (desarrollo). Plazo: Sprint 8 (2 semanas). Nueva versión del ERS: v1.1 (incluye RF-27).
 \item \textbf{RFC-02 -- MFA.} Debate sobre el impacto en RF-21 (operación offline). Decisión: \textbf{APROBADO CON CONDICIÓN}. Condición: implementar pregunta de seguridad como \textit{fallback} sin conectividad. Responsable: PONCE RIVERA (backend MFA). Plazo: Sprint 9.
-\item \textbf{RFC-03 -- Firma veterinaria.} Se votó aprobar de inmediato dado el riesgo regulatorio identificado. Decisión: \textbf{APROBADO}. Responsable: AMAGUA SACON (arquitectura de exportación). Plazo: v3.1 en 3 semanas.
+\item \textbf{RFC-03 -- Firma veterinaria.} Se votó aprobar de inmediato dado el riesgo regulatorio identificado. Decisión: \textbf{APROBADO}. Responsable: AMAGUA SACON (arquitectura de exportación). Plazo: v1.1 en 3 semanas.
 \end{itemize}
-\textbf{Versión resultante del ERS:} v3.1.
+\textbf{Versión resultante del ERS:} v1.1.
 
 %======================================================
 \section{Trazabilidad en Herramienta CASE}
@@ -624,7 +624,7 @@ ERS Sección 3.3 & RNF-12 & -- (NFR transversal) & KMS / cifrado & TC-33 & CARNI
 \end{longtable}
 
 \textbf{Requisitos huérfanos:} RF-24 (búsqueda de producto por código de lote) no tiene caso de
-prueba asignado en v3.1 -- pendiente TC-24 en Sprint 9. RNF-06 (portabilidad de navegadores)
+prueba asignado en v1.1 -- pendiente TC-24 en Sprint 9. RNF-06 (portabilidad de navegadores)
 carece de caso de uso explícito -- se trazará en la suite de pruebas de compatibilidad TC-34.
 
 %======================================================
@@ -725,15 +725,15 @@ La siguiente tabla es una recopilación de los commit más relevantes realizados
 
 \subsection{Tag de Línea Base}
 \begin{verbatim}
-git tag -a baseline-v3.1 -m "Baseline aprobada por CCB - Semana 14 ISR-401 - CarniCore"
-git push origin baseline-v3.1
+git tag -a baseline-v1.1 -m "Baseline aprobada por CCB - Semana 14 ISR-401 - CarniCore"
+git push origin baseline-v1.1
 \end{verbatim}
 
 \subsection{CHANGELOG.md}
 \begin{verbatim}
 # CHANGELOG
 
-## [3.1] - 2026-XX-XX
+## [1.1] - 2026-05-08
 ### Añadido
 - RF-26: vista publica de trazabilidad via QR con campos delimitados (RFC implicito, D-01)
 - RF-27: filtro de reportes por proveedor (RFC-01)
@@ -755,7 +755,7 @@ git push origin baseline-v3.1
 - RNF-14: plazo maximo de recuperacion offline de 5 minutos
 - Glosario: distincion entre merma de faenamiento y merma de despiece
 
-## [3.0] - 2026-08-02
+## [1.0] - 2026-08-02
 - Version previa del ERS - Entrega 2A (25 RF, 15 RNF)
 \end{verbatim}
 
@@ -820,7 +820,7 @@ los requisitos son más volátiles y la propietaria puede validar incrementalmen
 %======================================================
 \section{Conclusiones Críticas}
 %======================================================
-\textbf{C1.} La inspección Fagan reveló que el 76,4\,\% de los defectos del ERS de CarniCore v3.0
+\textbf{C1.} La inspección Fagan reveló que el 76,4\,\% de los defectos del ERS de CarniCore v1.0
 eran de severidad crítica o mayor, y que se concentraron precisamente en los requisitos que
 sustentan la propuesta de valor del sistema (RF-25/QR, RF-08 vida útil, RF-06 merma, RNF-02
 disponibilidad). La densidad de 0,71 defectos/página superó el umbral industrial recomendado de
@@ -844,9 +844,9 @@ vista matricial nativa en Jira obligó al equipo a mantener la matriz de forma m
 introduciendo riesgo de inconsistencia si ambos artefactos no se sincronizan.
 
 \textbf{C4.} La implementación del \textit{baseline} v1.1 con \textit{commits} semánticos distribuidos entre los
-cinco integrantes proporcionó evidencia objetiva de la contribución individual, verificable
+cuatro integrantes proporcionó evidencia objetiva de la contribución individual, verificable
 directamente en GitHub, demostrando que el control de versiones es también un mecanismo de
-transparencia y rendición de cuentas en un equipo de cinco personas -- más relevante aún que en
+transparencia y rendición de cuentas en un equipo de cuatro personas -- más relevante aún que en
 equipos de cuatro, dado el riesgo de dilución de responsabilidad individual.
 
 \textbf{C5.} La comparativa entre IR tradicional e IR ágil reveló que CarniCore se beneficia de
@@ -869,7 +869,7 @@ CRESPO ESPINOZA KLEBER OBED & Preparación individual (6 defectos), rol de lecto
 \hline
 GAMARRA ARAUJO EDHU XAVIER & Preparación individual (7 defectos), Inspector 1, redacción de correcciones D-01 a D-06, construcción de la matriz de trazabilidad, redacción Secciones 5 y 9 & 20 \\
 \hline
-PONCE RIVERA MERY HELENMEY & Inspector 2, redacción RFC-02, cálculo de métricas de inspección, gráficos, \textit{commits} de \textit{fixes} v3.1, redacción Sección 4 & 10 \\
+PONCE RIVERA MERY HELENMEY & Inspector 2, redacción RFC-02, cálculo de métricas de inspección, gráficos, \textit{commits} de \textit{fixes} v1.1, redacción Sección 4 & 10 \\
 \hline
 AMAGUA SACON ROBYN WILLIAN & Preparación individual (5 defectos), Inspector 3, redacción RFC-03, redacción Sección 10 y Anexos & 2 \\
 \hline
