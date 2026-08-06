@@ -1,0 +1,25 @@
+﻿Issue Key,Summary,Issue Type,Status,Priority (MoSCoW),Epic Link,Stakeholder / Fuente,Clase / Módulo,Caso de Prueba,Estado de Verificación,Sprint,Story Points
+CARN-01,Registrar proveedor,Story,To Do,Must Have,EPIC-01,Propietaria,ProveedorController,TC-01,No verificado,Sprint 1,3
+CARN-02,Registrar guía de origen,Story,To Do,Must Have,EPIC-01,Propietaria,GuiaOrigenService,TC-02,No verificado,Sprint 1,3
+CARN-03,Registrar ingreso de lote/animal,Story,To Do,Must Have,EPIC-01,Propietaria,IngresoController,TC-03,No verificado,Sprint 2,5
+CARN-04,Registrar pesaje,Story,To Do,Must Have,EPIC-02,Bodega,PesajeService,TC-04,No verificado,Sprint 2,3
+CARN-05,Registrar despiece,Story,To Do,Must Have,EPIC-02,Carnicero,DespieceService,TC-05,No verificado,Sprint 3,5
+CARN-06,Ingresar a cámara frigorífica,Story,To Do,Must Have,EPIC-02,Bodega,CamaraService,TC-06,No verificado,Sprint 3,3
+CARN-07,Alertar vida útil por tipo de producto,Story,To Do,Must Have,EPIC-02,Admin. general,VidaUtilService,TC-07,No verificado,Sprint 4,5
+CARN-08,Aprobar baja de producto,Story,To Do,Must Have,EPIC-01,Admin. general,BajaProductoService,TC-08,No verificado,Sprint 4,3
+CARN-09,Registrar venta,Story,To Do,Must Have,EPIC-04,Bodega,VentaController,TC-09,No verificado,Sprint 5,3
+CARN-10,Consultar trazabilidad completa,Story,To Do,Must Have,EPIC-03,Propietaria,TrazabilidadService,TC-10,No verificado,Sprint 5,8
+CARN-11,"Generar reportes de ventas, compras y pérdidas",Story,To Do,Must Have,EPIC-04,Propietaria,ReporteService,TC-13,No verificado,Sprint 6,5
+CARN-12,Gestionar usuarios y roles,Story,To Do,Must Have,EPIC-05,Admin. general,UsuarioService,TC-15,No verificado,Sprint 6,3
+CARN-13,Consultar stock por fecha,Story,To Do,Must Have,EPIC-02,Bodega,InventarioService,TC-16,No verificado,Sprint 7,5
+CARN-14,Configurar precios por tipo de producto,Story,To Do,Must Have,EPIC-04,Propietaria,PrecioService,TC-19,No verificado,Sprint 7,3
+CARN-15,Registrar corte de energía,Story,To Do,Must Have,EPIC-05,Admin. general,IncidenteService,TC-20,No verificado,Sprint 8,3
+CARN-16,Operar en modo offline,Story,To Do,Must Have,EPIC-05,Bodega,SyncService / offline/,TC-21,No verificado,Sprint 8,8
+CARN-17,Registrar devolución de producto,Story,To Do,Must Have,EPIC-04,Bodega,DevolucionService,TC-22,No verificado,Sprint 8,3
+CARN-18,Exportar evidencia de trazabilidad para auditoría,Story,To Do,Must Have,EPIC-03,Admin. general,ExportService / firma/,TC-23,No verificado,Sprint 9,5
+CARN-19,Consulta pública QR de trazabilidad (RF-25/RF-26),Story,To Do,Must Have,EPIC-03,Cliente,QrPublicoController,TC-25,No verificado,Sprint 9,5
+CARN-20,Filtrar reportes por proveedor (RF-27 — RFC-01),Story,To Do,Must Have,EPIC-04,Admin. general,ReporteService,TC-27,No verificado,Sprint 8,3
+CARN-21,Autenticación MFA para roles privilegiados (RFC-02),Story,To Do,Must Have,EPIC-05,LOPDP / RNF-03,AuthController / mfa/,TC-30,No verificado,Sprint 9,5
+CARN-22,Firma veterinaria en exportación Agrocalidad (RFC-03),Story,To Do,Must Have,EPIC-03,Agrocalidad / RF-02,ExportService / firma/,TC-31,No verificado,Sprint 9,3
+CARN-23,Disponibilidad 98 % y RTO ≤ 30 min (RNF-02),Task,To Do,Must Have,EPIC-05,ERS Sección 3.3,Config. de disponibilidad,TC-32,No verificado,Sprint 10,3
+CARN-24,Cifrado AES-256 + KMS rotación 90 días (RNF-12),Task,To Do,Must Have,EPIC-05,ERS Sección 3.3,KMS / cifrado,TC-33,No verificado,Sprint 10,5
