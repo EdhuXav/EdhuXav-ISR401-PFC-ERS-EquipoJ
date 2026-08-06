@@ -1,4 +1,4 @@
-﻿Issue Key,Summary,Issue Type,Status,Priority (MoSCoW),Epic Link,Stakeholder / Fuente,Clase / Módulo,Caso de Prueba,Estado de Verificación,Sprint,Story Points
+Issue Key,Summary,Issue Type,Status,Priority (MoSCoW),Epic Link,Stakeholder / Fuente,Clase / Módulo,Caso de Prueba,Estado de Verificación,Sprint,Story Points
 CARNICORE-01,Registrar proveedor,Story,To Do,Must Have,EPIC-01,Propietaria,ProveedorController,TC-01,No verificado,Sprint 1,3
 CARNICORE-02,Registrar guía de origen,Story,To Do,Must Have,EPIC-01,Propietaria,GuiaOrigenService,TC-02,No verificado,Sprint 1,3
 CARNICORE-03,Registrar ingreso de lote/animal,Story,To Do,Must Have,EPIC-01,Propietaria,IngresoController,TC-03,No verificado,Sprint 2,5
@@ -9,7 +9,7 @@ CARNICORE-07,Alertar vida útil por tipo de producto,Story,To Do,Must Have,EPIC-
 CARNICORE-08,Aprobar baja de producto,Story,To Do,Must Have,EPIC-01,Admin. general,BajaProductoService,TC-08,No verificado,Sprint 4,3
 CARNICORE-09,Registrar venta,Story,To Do,Must Have,EPIC-04,Bodega,VentaController,TC-09,No verificado,Sprint 5,3
 CARNICORE-10,Consultar trazabilidad completa,Story,To Do,Must Have,EPIC-03,Propietaria,TrazabilidadService,TC-10,No verificado,Sprint 5,8
-"CARNICORE-11,""Generar reportes de ventas, compras y pérdidas"",Story,To Do,Must Have,EPIC-04,Propietaria,ReporteService,TC-13,No verificado,Sprint 6,5"
+CARNICORE-11,"Generar reportes de ventas, compras y pérdidas",Story,To Do,Must Have,EPIC-04,Propietaria,ReporteService,TC-13,No verificado,Sprint 6,5
 CARNICORE-12,Gestionar usuarios y roles,Story,To Do,Must Have,EPIC-05,Admin. general,UsuarioService,TC-15,No verificado,Sprint 6,3
 CARNICORE-13,Consultar stock por fecha,Story,To Do,Must Have,EPIC-02,Bodega,InventarioService,TC-16,No verificado,Sprint 7,5
 CARNICORE-14,Configurar precios por tipo de producto,Story,To Do,Must Have,EPIC-04,Propietaria,PrecioService,TC-19,No verificado,Sprint 7,3
